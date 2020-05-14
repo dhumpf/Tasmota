@@ -496,8 +496,15 @@ void PN532_ScanForTag(void)
 
 #ifdef USE_PN532_DATA_FUNCTION
       ResponseTime_P(PSTR(",\"PN532\":{\"UID\":\"%s\", \"DATA\":\"%s\"}}"), uids, card_datas);
+	  #ifdef USE_DOMOTICZ
+            DomoticzSensor(DZ_COUNT, uids);  // Send uid as Domoticz Counter value
+            DomoticzSensor(DZ_VOLTAGE, card_datas);  // Send data as Domoticz Voltage value
+      #endif  // USE_DOMOTICZ
 #else
       ResponseTime_P(PSTR(",\"PN532\":{\"UID\":\"%s\"}}"), uids);
+      #ifdef USE_DOMOTICZ
+            DomoticzSensor(DZ_COUNT, uids);  // Send uid as Domoticz Counter value
+      #endif  // USE_DOMOTICZ
 #endif // USE_PN532_DATA_FUNCTION
 
       MqttPublishTeleSensor();
