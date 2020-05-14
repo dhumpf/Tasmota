@@ -233,6 +233,9 @@ enum UserSelectablePins {
   GPIO_BOILER_OT_RX,   // OpenTherm Boiler RX pin
   GPIO_BOILER_OT_TX,   // OpenTherm Boiler TX pin
   GPIO_WINDMETER_SPEED,  // WindMeter speed counter pin
+  GPIO_DY50_TX,			// DY50 FPM10A Fingerprint Module TX Pin
+  GPIO_DY50_RX,			// DY50 FPM10A Fingerprint Module RX Pin
+  GPIO_DY50_TOUCH,		// DY50 FPM10A Fingerprint Module TouchDetect Pin
   GPIO_SENSOR_END };
 
 // Programmer selectable GPIO functionality
@@ -322,7 +325,8 @@ const char kSensorNames[] PROGMEM =
   D_SENSOR_ELECTRIQ_MOODL "|"
   D_SENSOR_AS3935 "|" D_SENSOR_PMS5003_TX "|"
   D_SENSOR_BOILER_OT_RX "|" D_SENSOR_BOILER_OT_TX "|"
-  D_SENSOR_WINDMETER_SPEED
+  D_SENSOR_WINDMETER_SPEED "|"
+  D_SENSOR_DY50_TX "|" D_SENSOR_DY50_RX "|" D_SENSOR_DY50_TOUCH
   ;
 
 const char kSensorNamesFixed[] PROGMEM =
@@ -676,6 +680,11 @@ const uint8_t kGpioNiceList[] PROGMEM = {
 #endif
 #ifdef USE_AS3935
   GPIO_AS3935,
+#endif
+#ifdef USE_DY50
+  GPIO_DY50_TX,			// DY50 FPM10A Fingerprint Module TX Pin
+  GPIO_DY50_RX,			// DY50 FPM10A Fingerprint Module RX Pin
+  GPIO_DY50_TOUCH,		// DY50 FPM10A Fingerprint Module TouchDetect Pin
 #endif
 };
 

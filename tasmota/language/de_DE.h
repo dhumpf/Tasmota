@@ -805,4 +805,9 @@
 #define D_SENSOR_BOILER_OT_RX   "OpenTherm RX"
 #define D_SENSOR_BOILER_OT_TX   "OpenTherm TX"
 
+//xsns_70_dy50.ino
+#define D_SENSOR_DY50_TX      "DY50 Tx"
+#define D_SENSOR_DY50_RX      "DY50 Rx"
+#define D_SENSOR_DY50_TOUCH      "DY50 Touch"
+
 #endif  // _LANGUAGE_DE_DE_H_

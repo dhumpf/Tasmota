@@ -424,6 +424,9 @@ void GetFeatures(void)
 #ifdef USE_PAJ7620
   feature_sns2 |= 0x80000000;  // xsns_50_paj7620.ino
 #endif
+#ifdef USE_DY50
+  feature_sns2 |= 0x90000000;  // xsns_70_dy50.ino
+#endif
 
 /*********************************************************************************************/
 
